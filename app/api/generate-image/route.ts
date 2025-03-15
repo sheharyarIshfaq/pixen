@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { auth } from "@clerk/nextjs/server";
 
 const client = new OpenAI({
   baseURL: "https://api.studio.nebius.com/v1/",
@@ -8,6 +9,9 @@ const client = new OpenAI({
 
 export async function POST(req: Request) {
   try {
+    // Check if user is authenticated
+    await auth.protect()
+
     const { prompt } = await req.json();
 
     if (!prompt) {

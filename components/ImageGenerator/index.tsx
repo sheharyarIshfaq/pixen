@@ -5,13 +5,15 @@ import React, { useState } from "react";
 import { toast } from "sonner";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
-import { Download, ImageIcon, Loader2 } from "lucide-react";
+import { Download, ImageIcon, Loader2, LogIn, SendIcon } from "lucide-react";
 import { Label } from "../ui/label";
+import { useAuth, SignInButton } from "@clerk/nextjs";
 
 const ImageGenerator = () => {
   const [prompt, setPrompt] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [loading, setLoading] = useState(false);
+  const { isSignedIn } = useAuth();
 
   const handlePromptChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setPrompt(e.target.value);
@@ -23,6 +25,11 @@ const ImageGenerator = () => {
     if (!prompt.trim()) {
       toast.error("Please enter a description for your image");
       return;
+    }
+
+    // Only proceed if user is signed in
+    if (!isSignedIn) {
+      return toast.error("Please sign in to generate images");
     }
 
     setLoading(true);
@@ -68,6 +75,7 @@ const ImageGenerator = () => {
 
     toast.success("Image downloaded successfully");
   };
+
   return (
     <div className={cn("w-full max-w-4xl mx-auto px-4")}>
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -88,20 +96,33 @@ const ImageGenerator = () => {
           />
         </div>
 
-        <Button
-          type="submit"
-          disabled={loading || !prompt.trim()}
-          className="w-full py-6 text-base font-medium transition-all bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90"
-        >
-          {loading ? (
-            <>
-              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-              Generating...
-            </>
-          ) : (
-            "Generate Image"
-          )}
-        </Button>
+        {isSignedIn ? (
+          <Button
+            type="submit"
+            disabled={loading || !prompt.trim()}
+            className="cursor-pointer w-full py-6 text-base font-medium transition-all bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90"
+          >
+            <SendIcon className="mr-2 h-5 w-5" />
+            {loading ? (
+              <>
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                Generating...
+              </>
+            ) : (
+              "Generate Image"
+            )}
+          </Button>
+        ) : (
+          <SignInButton mode="modal">
+            <Button
+              type="button"
+              className="cursor-pointer w-full py-6 text-base font-medium transition-all bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90"
+            >
+              <LogIn className="mr-2 h-5 w-5" />
+              Sign In to Generate
+            </Button>
+          </SignInButton>
+        )}
       </form>
 
       <div className="mt-12 space-y-6">
@@ -131,7 +152,9 @@ const ImageGenerator = () => {
                 strokeWidth={1.25}
               />
               <p className="text-purple-600 text-center max-w-xs">
-                Your generated image will appear here
+                {isSignedIn 
+                  ? "Your generated image will appear here" 
+                  : "Sign in to generate images"}
               </p>
             </div>
           )

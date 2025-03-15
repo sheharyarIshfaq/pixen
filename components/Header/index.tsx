@@ -1,6 +1,10 @@
+"use client";
+
 import { Github, Sparkles } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { Button } from "../ui/button";
 
 const Header = () => {
   return (
@@ -14,7 +18,7 @@ const Header = () => {
           <span>Pixen</span>
         </Link>
 
-        <nav className="flex items-center space-x-1">
+        <nav className="flex items-center space-x-3">
           <a
             href="https://github.com/sheharyarIshfaq/pixen"
             target="_blank"
@@ -24,6 +28,23 @@ const Header = () => {
             <Github className="h-4 w-4" />
             GitHub
           </a>
+          
+          <SignedOut>
+            <SignInButton mode="modal">
+              <Button variant="outline" size="sm" className="px-4 cursor-pointer">
+                Sign In
+              </Button>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <Button size="sm" className="px-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90 cursor-pointer">
+                Sign Up
+              </Button>
+            </SignUpButton>
+          </SignedOut>
+          
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
         </nav>
       </div>
     </header>
