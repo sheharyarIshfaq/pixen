@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Pixen",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Pixen - AI Image Generation Platform",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Pixen - AI Image Generation Platform",
     description:
       "Transform your text descriptions into stunning visual imagery using AI",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
