@@ -102,14 +102,16 @@ const ImageGenerator = () => {
             disabled={loading || !prompt.trim()}
             className="cursor-pointer w-full py-6 text-base font-medium transition-all bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:opacity-90"
           >
-            <SendIcon className="mr-2 h-5 w-5" />
             {loading ? (
               <>
                 <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                 Generating...
               </>
             ) : (
-              "Generate Image"
+              <>
+                <SendIcon className="mr-2 h-5 w-5" />
+                Generate Image
+              </>
             )}
           </Button>
         ) : (
@@ -152,8 +154,8 @@ const ImageGenerator = () => {
                 strokeWidth={1.25}
               />
               <p className="text-purple-600 text-center max-w-xs">
-                {isSignedIn 
-                  ? "Your generated image will appear here" 
+                {isSignedIn
+                  ? "Your generated image will appear here"
                   : "Sign in to generate images"}
               </p>
             </div>
