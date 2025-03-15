@@ -1,6 +1,6 @@
 # Pixen - AI Image Generation Platform
 
-![Pixen](https://i.imgur.com/FATy4Pc.png) <!-- Replace with an actual screenshot of your application -->
+![Pixen](https://i.imgur.com/PJY7VrU.png) <!-- Replace with an actual screenshot of your application -->
 
 Pixen is a modern web application that transforms text descriptions into stunning visual imagery using AI. Built with Next.js and powered by Nebius AI, this platform allows users to easily generate high-quality images from text prompts.
 
