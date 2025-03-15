@@ -18,7 +18,7 @@ const Header = () => {
           <span>Pixen</span>
         </Link>
 
-        <nav className="flex items-center space-x-3">
+        <nav className="flex items-center space-x-1 sm:space-x-3">
           <a
             href="https://github.com/sheharyarIshfaq/pixen"
             target="_blank"
@@ -26,7 +26,8 @@ const Header = () => {
             className="px-4 py-2 text-sm text-muted-foreground rounded-md hover:bg-secondary hover:text-foreground transition-colors flex items-center gap-2"
           >
             <Github className="h-4 w-4" />
-            GitHub
+            <span
+            className="hidden sm:inline">GitHub</span>
           </a>
           
           <SignedOut>
