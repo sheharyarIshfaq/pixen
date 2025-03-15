@@ -21,6 +21,7 @@ Pixen is a modern web application that transforms text descriptions into stunnin
 - **Responsive Design**: Works perfectly on desktop and mobile devices
 - **Fast Performance**: Optimized for speed with Next.js and React 19
 - **Modern UI**: Beautiful interface with TailwindCSS animations
+- **User Authentication**: Secure user authentication with Clerk
 
 ## Tech Stack
 
@@ -28,6 +29,7 @@ Pixen is a modern web application that transforms text descriptions into stunnin
 - **UI Components**: Radix UI, Lucide React icons
 - **Styling**: TailwindCSS with custom animations
 - **API Integration**: Nebius AI for image generation
+- **Authentication**: Clerk for user authentication and management
 - **Notifications**: Sonner toast notifications
 
 ## Getting Started
@@ -36,6 +38,7 @@ Pixen is a modern web application that transforms text descriptions into stunnin
 
 - Node.js 18.0 or later
 - A Nebius API key for image generation
+- Clerk account and API keys for authentication
 
 ### Installation
 
@@ -59,9 +62,11 @@ Pixen is a modern web application that transforms text descriptions into stunnin
 3. Set up environment variables:
 
    - Copy `.env.example` to `.env`
-   - Add your Nebius API key to the `.env` file:
+   - Add your API keys to the `.env` file:
      ```
-     NEBIUS_API_KEY=your_api_key_here
+     NEBIUS_API_KEY=your_nebius_api_key_here
+     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key_here
+     CLERK_SECRET_KEY=your_clerk_secret_key_here
      ```
 
 4. Start the development server:
@@ -78,11 +83,27 @@ Pixen is a modern web application that transforms text descriptions into stunnin
 
 ## Usage
 
-1. Enter a detailed description of the image you want to create in the text area
-2. Click the "Generate Image" button
-3. Wait a few seconds for the AI to process your request
-4. View your generated image
-5. Click the download button to save the image to your device
+1. Sign in to your account (or create a new one)
+2. Enter a detailed description of the image you want to create in the text area
+3. Click the "Generate Image" button
+4. Wait a few seconds for the AI to process your request
+5. View your generated image
+6. Click the download button to save the image to your device
+
+## Authentication
+
+Pixen uses [Clerk](https://clerk.com/) for user authentication and management. This provides:
+
+- **Secure Authentication**: Industry-standard security practices
+- **Multiple Sign-in Methods**: Email/password, social logins, and more
+- **User Management**: User profiles and account settings
+- **Protected Routes**: Only authenticated users can generate images
+- **API Protection**: Backend routes are secured against unauthorized access
+
+The authentication flow is seamlessly integrated into the application:
+- Users must sign in to generate images
+- The Sign In button replaces the Generate button for unauthenticated users
+- API routes are protected to ensure only authenticated users can generate images
 
 ## Project Structure
 
@@ -117,9 +138,11 @@ For detailed deployment instructions, refer to the [Next.js deployment documenta
 
 ## Environment Variables
 
-| Variable         | Description                                    |
-| ---------------- | ---------------------------------------------- |
-| `NEBIUS_API_KEY` | API key for Nebius AI image generation service |
+| Variable                            | Description                                    |
+| ----------------------------------- | ---------------------------------------------- |
+| `NEBIUS_API_KEY`                    | API key for Nebius AI image generation service |
+| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | Publishable key for Clerk authentication       |
+| `CLERK_SECRET_KEY`                  | Secret key for Clerk authentication            |
 
 ## SEO Optimization
 
@@ -150,6 +173,7 @@ Contributions to Pixen are welcome! Please feel free to submit a Pull Request.
 - [Next.js](https://nextjs.org/) - The React framework for production
 - [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework
 - [Nebius AI](https://nebius.ai/) - AI image generation service
+- [Clerk](https://clerk.com/) - Authentication and user management
 - [Radix UI](https://www.radix-ui.com/) - Unstyled, accessible UI components
 
 ---
@@ -161,5 +185,5 @@ Contributions to Pixen are welcome! Please feel free to submit a Pull Request.
 <!-- Keywords for SEO -->
 <!--
   AI image generation, text to image, Pixen, Next.js image generator,
-  AI art generator, Nebius AI, React image generation, TailwindCSS UI
+  AI art generator, Nebius AI, React image generation, TailwindCSS UI, authentication
 -->
