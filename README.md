@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pixen - AI Image Generation Platform
+
+![Pixen](https://i.imgur.com/XYZ123.png) <!-- Replace with an actual screenshot of your application -->
+
+Pixen is a modern web application that transforms text descriptions into stunning visual imagery using AI. Built with Next.js and powered by Nebius AI, this platform allows users to easily generate high-quality images from text prompts.
+
+<p align="center">
+  <a href="https://github.com/sheharyarIshfaq/pixen.git">
+    <img src="https://img.shields.io/github/stars/sheharyarIshfaq/pixen?style=social" alt="GitHub stars">
+  </a>
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License">
+  <img src="https://img.shields.io/badge/Next.js-15-black" alt="Next.js">
+  <img src="https://img.shields.io/badge/React-19-blue" alt="React">
+</p>
+
+## Features
+
+- **Text-to-Image Generation**: Convert your text descriptions into detailed images
+- **User-Friendly Interface**: Clean, intuitive design for a seamless experience
+- **Instant Downloads**: Save your generated images with a single click
+- **Responsive Design**: Works perfectly on desktop and mobile devices
+- **Fast Performance**: Optimized for speed with Next.js and React 19
+- **Modern UI**: Beautiful interface with TailwindCSS animations
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, React 19, TailwindCSS 4
+- **UI Components**: Radix UI, Lucide React icons
+- **Styling**: TailwindCSS with custom animations
+- **API Integration**: Nebius AI for image generation
+- **Notifications**: Sonner toast notifications
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18.0 or later
+- A Nebius API key for image generation
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sheharyarIshfaq/pixen.git
+   cd pixen
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. Set up environment variables:
+   - Copy `.env.example` to `.env`
+   - Add your Nebius API key to the `.env` file:
+     ```
+     NEBIUS_API_KEY=your_api_key_here
+     ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+## Usage
+
+1. Enter a detailed description of the image you want to create in the text area
+2. Click the "Generate Image" button
+3. Wait a few seconds for the AI to process your request
+4. View your generated image
+5. Click the download button to save the image to your device
+
+## Project Structure
+
+```
+pixen/
+├── app/                  # Next.js app directory
+│   ├── api/              # API routes
+│   │   └── generate-image/ # Image generation endpoint
+│   ├── globals.css       # Global styles
+│   ├── layout.tsx        # Root layout component
+│   └── page.tsx          # Home page component
+├── components/           # React components
+│   ├── Footer/           # Footer component
+│   ├── Header/           # Header component
+│   ├── ImageGenerator/   # Main image generation component
+│   └── ui/               # UI components
+├── lib/                  # Utility functions
+├── public/               # Static assets
+└── ...                   # Configuration files
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The application can be deployed on Vercel or any other platform that supports Next.js applications:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+For detailed deployment instructions, refer to the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Variable | Description |
+|----------|-------------|
+| `NEBIUS_API_KEY` | API key for Nebius AI image generation service |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## SEO Optimization
 
-## Deploy on Vercel
+Pixen includes several features to improve search engine visibility:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Metadata**: Proper title and description tags in the layout component
+- **Semantic HTML**: Structured content with appropriate heading levels
+- **Responsive Design**: Mobile-friendly interface for better search rankings
+- **Performance**: Optimized loading times with Next.js
+- **Image Optimization**: Proper image handling with alt tags
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+Contributions to Pixen are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+[MIT](LICENSE)
+
+## Acknowledgements
+
+- [Next.js](https://nextjs.org/) - The React framework for production
+- [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework
+- [Nebius AI](https://nebius.ai/) - AI image generation service
+- [Radix UI](https://www.radix-ui.com/) - Unstyled, accessible UI components
+
+---
+
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/sheharyarIshfaq">Sheharyar Ishfaq</a>
+</p>
+
+<!-- Keywords for SEO -->
+<!-- 
+  AI image generation, text to image, Pixen, Next.js image generator, 
+  AI art generator, Nebius AI, React image generation, TailwindCSS UI
+-->

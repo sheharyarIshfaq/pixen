@@ -16,7 +16,7 @@ const Header = () => {
 
         <nav className="flex items-center space-x-1">
           <a
-            href="https://github.com"
+            href="https://github.com/sheharyarIshfaq/pixen"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 text-sm text-muted-foreground rounded-md hover:bg-secondary hover:text-foreground transition-colors"

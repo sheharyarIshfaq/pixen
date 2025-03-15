@@ -1,6 +1,15 @@
+import { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ImageGenerator from "@/components/ImageGenerator";
+
+export const metadata: Metadata = {
+  title: "Pixen - Transform Words Into Stunning Visuals",
+  description: "Use AI to generate beautiful images from text descriptions. Simply describe what you want to see, and watch as our AI brings your imagination to life.",
+  alternates: {
+    canonical: "https://pixen.vercel.app",
+  },
+};
 
 export default function Home() {
   return (
