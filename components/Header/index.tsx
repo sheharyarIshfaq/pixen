@@ -5,13 +5,13 @@ import React from "react";
 const Header = () => {
   return (
     <header className="w-full py-6">
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="container px-8 mx-auto flex items-center justify-between">
         <Link
           href="/"
           className="text-xl font-medium tracking-tight flex items-center gap-1.5 hover:opacity-80 transition-opacity"
         >
           <Sparkles className="h-5 w-5" />
-          <span>Image Sorcery</span>
+          <span>Pixen</span>
         </Link>
 
         <nav className="flex items-center space-x-1">

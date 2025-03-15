@@ -9,7 +9,7 @@ export default function Home() {
 
       <main className="flex-1 w-full">
         <section className="py-16 md:py-24">
-          <div className="container mx-auto">
+          <div className="container px-8 mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16 animate-slide-up">
               <p className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-gradient-to-r from-purple-400 to-pink-400 text-white">
                 AI-Powered Image Generation
@@ -30,7 +30,7 @@ export default function Home() {
         </section>
 
         <section className="py-16 bg-gradient-to-r from-purple-500 to-pink-500 text-white">
-          <div className="container mx-auto">
+          <div className="container px-8 mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
               <div
                 className="bg-white/20 backdrop-blur-sm rounded-xl p-6 animate-slide-up text-white shadow-lg border border-white/20"

@@ -119,3 +119,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+@theme {
+  --breakpoint-2xl: 1400px;
+}
