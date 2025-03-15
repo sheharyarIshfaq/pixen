@@ -1,6 +1,6 @@
 # Pixen - AI Image Generation Platform
 
-![Pixen](https://i.imgur.com/XYZ123.png) <!-- Replace with an actual screenshot of your application -->
+![Pixen](https://i.imgur.com/FATy4Pc.png) <!-- Replace with an actual screenshot of your application -->
 
 Pixen is a modern web application that transforms text descriptions into stunning visual imagery using AI. Built with Next.js and powered by Nebius AI, this platform allows users to easily generate high-quality images from text prompts.
 
@@ -40,12 +40,14 @@ Pixen is a modern web application that transforms text descriptions into stunnin
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/sheharyarIshfaq/pixen.git
    cd pixen
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    # or
@@ -55,6 +57,7 @@ Pixen is a modern web application that transforms text descriptions into stunnin
    ```
 
 3. Set up environment variables:
+
    - Copy `.env.example` to `.env`
    - Add your Nebius API key to the `.env` file:
      ```
@@ -62,6 +65,7 @@ Pixen is a modern web application that transforms text descriptions into stunnin
      ```
 
 4. Start the development server:
+
    ```bash
    npm run dev
    # or
@@ -113,8 +117,8 @@ For detailed deployment instructions, refer to the [Next.js deployment documenta
 
 ## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
+| Variable         | Description                                    |
+| ---------------- | ---------------------------------------------- |
 | `NEBIUS_API_KEY` | API key for Nebius AI image generation service |
 
 ## SEO Optimization
@@ -155,7 +159,7 @@ Contributions to Pixen are welcome! Please feel free to submit a Pull Request.
 </p>
 
 <!-- Keywords for SEO -->
-<!-- 
-  AI image generation, text to image, Pixen, Next.js image generator, 
+<!--
+  AI image generation, text to image, Pixen, Next.js image generator,
   AI art generator, Nebius AI, React image generation, TailwindCSS UI
 -->
