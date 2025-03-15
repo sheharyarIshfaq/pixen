@@ -15,9 +15,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Pixen - AI Image Generation Platform",
-  description: "Transform your text descriptions into stunning visual imagery using AI. Create beautiful images with just a few words.",
-  keywords: "AI image generation, text to image, Pixen, AI art generator, Nebius AI, image creation",
-  authors: [{ name: "Sheharyar Ishfaq", url: "https://github.com/sheharyarIshfaq" }],
+  description:
+    "Transform your text descriptions into stunning visual imagery using AI. Create beautiful images with just a few words.",
+  keywords:
+    "AI image generation, text to image, Pixen, AI art generator, Nebius AI, image creation",
+  authors: [
+    { name: "Sheharyar Ishfaq", url: "https://github.com/sheharyarIshfaq" },
+  ],
   creator: "Sheharyar Ishfaq",
   publisher: "Sheharyar Ishfaq",
   openGraph: {
@@ -25,11 +29,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://pixen.vercel.app",
     title: "Pixen - AI Image Generation Platform",
-    description: "Transform your text descriptions into stunning visual imagery using AI",
+    description:
+      "Transform your text descriptions into stunning visual imagery using AI",
     siteName: "Pixen",
     images: [
       {
-        url: "/og-image.png", // You'll need to add this image to your public folder
+        url: "/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Pixen - AI Image Generation Platform",
@@ -39,8 +44,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Pixen - AI Image Generation Platform",
-    description: "Transform your text descriptions into stunning visual imagery using AI",
-    images: ["/og-image.png"], // You'll need to add this image to your public folder
+    description:
+      "Transform your text descriptions into stunning visual imagery using AI",
+    images: ["/og-image.svg"],
   },
   robots: {
     index: true,
@@ -56,7 +62,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#a855f7" />
       </head>
